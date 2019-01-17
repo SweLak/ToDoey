@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3942371921E48501002B14CB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3942371821E48501002B14CB /* Item.swift */; };
+		394606A421E7222100FA410B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394606A321E7222100FA410B /* QuartzCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		394A3BE321E3190B0043E78A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A3BE221E3190B0043E78A /* AppDelegate.swift */; };
 		394A3BE521E3190B0043E78A /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A3BE421E3190B0043E78A /* TodoViewController.swift */; };
 		394A3BE821E3190B0043E78A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394A3BE621E3190B0043E78A /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		3942371821E48501002B14CB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		394606A321E7222100FA410B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		394A3BDF21E3190B0043E78A /* ToDoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		394A3BE221E3190B0043E78A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		394A3BE421E3190B0043E78A /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				394606A421E7222100FA410B /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		394606A221E7222100FA410B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				394606A321E7222100FA410B /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		394A3BD621E3190B0043E78A = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +94,7 @@
 				394A3BF621E3190D0043E78A /* ToDoeyTests */,
 				394A3C0121E3190D0043E78A /* ToDoeyUITests */,
 				394A3BE021E3190B0043E78A /* Products */,
+				394606A221E7222100FA410B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

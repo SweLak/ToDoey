@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Item: UIViewController {
+class Item: Codable {
 
     var titleText  = ""
     var done = false
