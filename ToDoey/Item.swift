@@ -6,13 +6,13 @@
 //  Copyright © 2019 Swetha. All rights reserved.
 //
 
-import UIKit
+//import UIKit
+//
+//class Item: Codable {
+//
+//    var titleText  = ""
+//    var done = false
 
-class Item: Codable {
-
-    var titleText  = ""
-    var done = false
-    
 
     /*
     // MARK: - Navigation
@@ -24,4 +24,4 @@ class Item: Codable {
     }
     */
 
-}
+//}

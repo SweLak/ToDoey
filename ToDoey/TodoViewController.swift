@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
-class TodoViewController: UITableViewController {
+class TodoViewController: UITableViewController, UISearchBarDelegate {
+    @IBOutlet weak var searchBar: UISearchBar!
     var itemArray = [Item]()
-    var dataPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Item.plist") //Creating the file in the mentioned path and add the compount
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var dataPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask) //.first?.appendingPathComponent("Item.plist") //Creating the file in the mentioned path and add the compount
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadItem()
+        print(dataPath)
+        searchBar.delegate = self
+        let request:NSFetchRequest<Item> = Item.fetchRequest()
+        loadItem(with: request)
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
-        cell.textLabel?.text = self.itemArray[indexPath.row].titleText
+        cell.textLabel?.text = self.itemArray[indexPath.row].title
         let item = self.itemArray[indexPath.row]
         cell.accessoryType = item.done ? .checkmark : .none
         return cell
@@ -36,8 +42,9 @@ class TodoViewController: UITableViewController {
         var textfield = UITextField()
         let alertNewItem = UIAlertController(title: "Add new Item", message: "", preferredStyle: .alert)
         let add = UIAlertAction(title: "New Item", style: .default) { (action) in
-            let item = Item()
-            item.titleText = textfield.text!
+            let item = Item(context: self.context)
+            item.title = textfield.text!
+            item.done = false
             self.itemArray.append(item)
             self.saveItem()
         }
@@ -49,23 +56,35 @@ class TodoViewController: UITableViewController {
        present(alertNewItem, animated: true, completion: nil)
     }
     func saveItem()  {
-        let encoder = PropertyListEncoder()
         do{
-            let data = try encoder.encode(self.itemArray)
-            try data.write(to: dataPath!)
+          try context.save()
         }catch{
             print(error)
         }
         self.tableView.reloadData()
     }
-    func loadItem(){
-        let decoder = PropertyListDecoder()
+    func loadItem(with request: NSFetchRequest<Item> = Item.fetchRequest()){
+        
         do{
-            let data = try Data(contentsOf: dataPath!)
-            itemArray = try decoder.decode([Item].self, from: data)
-            print(itemArray[0].done)
+            itemArray = try context.fetch(request)
         }catch{
-            print(error)
+            print("Error for fetching data: \(error)")
+        }
+        self.tableView.reloadData()
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        loadItem(with: request)
+        
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0{
+            loadItem()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
         }
     }
 }
