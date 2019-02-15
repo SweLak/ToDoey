@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39410C4C21F5A0AA00F27F13 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39410C4A21F5A0AA00F27F13 /* CoreDataModel.xcdatamodeld */; };
 		3942371921E48501002B14CB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3942371821E48501002B14CB /* Item.swift */; };
 		394606A421E7222100FA410B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394606A321E7222100FA410B /* QuartzCore.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		39462DA7220024AF00DA7528 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39462DA6220024AF00DA7528 /* TodoViewController.swift */; };
+		39462DA9220024DE00DA7528 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39462DA8220024DE00DA7528 /* CategoryViewController.swift */; };
 		394A3BE321E3190B0043E78A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A3BE221E3190B0043E78A /* AppDelegate.swift */; };
-		394A3BE521E3190B0043E78A /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394A3BE421E3190B0043E78A /* TodoViewController.swift */; };
 		394A3BE821E3190B0043E78A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394A3BE621E3190B0043E78A /* Main.storyboard */; };
 		394A3BEA21E3190D0043E78A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 394A3BE921E3190D0043E78A /* Assets.xcassets */; };
 		394A3BED21E3190D0043E78A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 394A3BEB21E3190D0043E78A /* LaunchScreen.storyboard */; };
@@ -36,11 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39410C4B21F5A0AA00F27F13 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		3942371821E48501002B14CB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		394606A321E7222100FA410B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		39462DA6220024AF00DA7528 /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		39462DA8220024DE00DA7528 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		394A3BDF21E3190B0043E78A /* ToDoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		394A3BE221E3190B0043E78A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		394A3BE421E3190B0043E78A /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		394A3BE721E3190B0043E78A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		394A3BE921E3190D0043E78A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		394A3BEC21E3190D0043E78A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,8 +116,10 @@
 			isa = PBXGroup;
 			children = (
 				394A3BE221E3190B0043E78A /* AppDelegate.swift */,
-				394A3BE421E3190B0043E78A /* TodoViewController.swift */,
+				39462DA6220024AF00DA7528 /* TodoViewController.swift */,
+				39462DA8220024DE00DA7528 /* CategoryViewController.swift */,
 				3942371821E48501002B14CB /* Item.swift */,
+				39410C4A21F5A0AA00F27F13 /* CoreDataModel.xcdatamodeld */,
 				394A3BE621E3190B0043E78A /* Main.storyboard */,
 				394A3BE921E3190D0043E78A /* Assets.xcassets */,
 				394A3BEB21E3190D0043E78A /* LaunchScreen.storyboard */,
@@ -271,8 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				394A3BE521E3190B0043E78A /* TodoViewController.swift in Sources */,
+				39462DA9220024DE00DA7528 /* CategoryViewController.swift in Sources */,
+				39462DA7220024AF00DA7528 /* TodoViewController.swift in Sources */,
 				3942371921E48501002B14CB /* Item.swift in Sources */,
+				39410C4C21F5A0AA00F27F13 /* CoreDataModel.xcdatamodeld in Sources */,
 				394A3BE321E3190B0043E78A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NR3MBUAE9R;
 				INFOPLIST_FILE = ToDoey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -466,6 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NR3MBUAE9R;
 				INFOPLIST_FILE = ToDoey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -596,6 +606,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		39410C4A21F5A0AA00F27F13 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				39410C4B21F5A0AA00F27F13 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 39410C4B21F5A0AA00F27F13 /* CoreDataModel.xcdatamodel */;
+			name = CoreDataModel.xcdatamodeld;
+			path = ../CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 394A3BD721E3190B0043E78A /* Project object */;
 }
